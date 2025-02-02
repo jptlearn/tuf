@@ -19,12 +19,12 @@ cd your-repo-name
 
 This section covers various data structures and their implementations:
 
-- [### Arrays] : Fixed-size data structures that store elements of the same type.
-- [###Linked] Lists: Dynamic data structures where each element points to the next.
-- [###Stacks]: LIFO (Last In, First Out) data structures.
-- [###Queues]: FIFO (First In, First Out) data structures.
-- [###Trees]: Hierarchical data structures with a root node and child nodes.
-- [###Graphs]: Collections of nodes connected by edges.
+- Arrays : Fixed-size data structures that store elements of the same type.
+- Linked Lists: Dynamic data structures where each element points to the next.
+- Stacks: LIFO (Last In, First Out) data structures.
+- Queues: FIFO (First In, First Out) data structures.
+- Trees: Hierarchical data structures with a root node and child nodes.
+- Graphs: Collections of nodes connected by edges.
 
 ## Algorithms
 
