@@ -115,13 +115,28 @@ void Frequency(int arr[], int n) {
   for (int i = 0; i < n; i++) {
     map[arr[i]]++;
   }
-  for(auto x: map) {
-    cout << x.first << " " << x.second << endl;
+  int maxFreq = 0, minFreq = n;
+  int maxEle = 0, minEle = 0;
+  for (auto x : map)
+  {
+    int count = x.second;
+    int element = x.first;
+
+    if (count > maxFreq) {
+      maxEle = element;
+      maxFreq = count;
+    }
+    if (count < minFreq) {
+      minEle = element;
+      minFreq = count;
+    }
   }
+  cout << "The highest frequency element is : " << maxEle << endl;
+  cout << "The lowest frequency element is : " << minEle << endl;
 }
 
 int main() {
-  int arr[] = {10, 5, 10, 15, 5};
+  int arr[] = {10, 10, 10, 15, 5, 5};
   int n = sizeof(arr) / sizeof(arr[0]);
   Frequency(arr, n);
 
