@@ -14,16 +14,11 @@ bool compare(Job A, Job B){
 }
 
 int maxDeadline(vector<Job> jobs) {
-  int maxLimit = INT_MIN;
-  for (const Job& job : jobs)
-  {
-    int temp = job.deadline;
-    if (job.deadline > maxLimit)
-    {
-      maxLimit = temp;
-    }
+  int maxDeadline = 0;
+  for (const Job& job: jobs) {
+    maxDeadline = max(maxDeadline, job.deadline);
   }
-  return maxLimit;
+  return maxDeadline;
 }
 
 int jobSequence(vector<Job> jobs) {
@@ -34,34 +29,6 @@ int jobSequence(vector<Job> jobs) {
   for (const Job &job : jobs) {
     for (int j = job.deadline - 1; j >= 0; j--) {
       if(jobSlot[j] == -1 ) {
-        jobSlot[j] = job.id;
-        totalProfit += job.profit;
-        break;
-      }
-    }
-  }
-  return totalProfit;
-}
-
-int jogSequence(vector<Job> jobs) {
-  // Sort the jobs in descending order of profit
-  sort(jobs.begin(), jobs.end(), compare);
-
-  int maxDeadline = 0;
-  for (const Job& job: jobs) {
-    if(job.deadline > maxDeadline) {
-      maxDeadline = job.deadline; // Find the maximum deadline
-    }
-  }
-
-  vector<int> jobSlot(maxDeadline, -1); // Initializing the job slots
-  int totalProfit = 0;
-
-  // Iterate through each job
-  for (const Job& job: jobs){
-    // Find a free slot for this job
-    for (int j = min(maxDeadline, job.deadline) - 1; j >= 0; j--) {
-      if (jobSlot[j] == -1) {
         jobSlot[j] = job.id;
         totalProfit += job.profit;
         break;
