@@ -14,7 +14,7 @@ int determinant(std::vector<std::vector<int>> &matrix, int n) {
   int det = 0;
   std::vector<std::vector<int>> subMatrix(n, std::vector<int>(n, 0));
 
-  for (int x = 0; x < n; x++) {ãl
+  for (int x = 0; x < n; x++) {
     int subi = 0;
     for (int i = 0; i < n; i++) {
       int subj = 0;
